@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bola 8</title>
+    <!-- With 💙 from @doguedogue -->
+</head>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden
+    }
+</style>
+
+<body onresize="scrrsz()">
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        var WIDTH = window.innerWidth;
+        var HEIGHT = window.innerHeight;
+
+        scrrsz();
+
+        function scrrsz() {
+            WIDTH = window.innerWidth;
+            HEIGHT = window.innerHeight;
+            pantalla.width = WIDTH;
+            pantalla.height = HEIGHT;
+            x = 0; //start over
+            limpiarPantalla();
+        }
+
+        function disenharCircunferencia(x, y, radio) {
+            pincel.fillStyle = "black";
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill();
+
+            pincel.fillStyle = "white";
+            pincel.beginPath();
+            pincel.arc(x, y, radio / 2, 0, 2 * Math.PI);
+            pincel.fill();
+
+            pincel.font = `${RADIO}px Georgia`;
+            pincel.fillStyle = "black";
+            pincel.fillText("8", x - (radio / 3), y + (radio / 3));
+        }
+
+        function limpiarPantalla() {
+            pincel.clearRect(0, 0, WIDTH, HEIGHT);
+            pincel.fillStyle = COLOR;
+            pincel.fillRect(0, 0, WIDTH, HEIGHT);
+        }
+
+
+        var sentido = 1;
+        var RADIO = 100;
+        var x = 0 - RADIO;
+        var SPEED = 1;
+        var COLOR = "#048434";
+
+        function actualizarPantalla() {
+
+            limpiarPantalla();
+            disenharCircunferencia(x, HEIGHT / 2, RADIO);
+            if (sentido == 1) {
+                x++;
+                if (x > WIDTH - RADIO) {
+                    sentido = 0;
+                }
+            } else {
+                x--;
+                if (x < 0 + RADIO) {
+                    sentido = 1;
+                }
+            }
+        }
+
+        setInterval(actualizarPantalla, SPEED);
+    </script>
+
+</body>
+
+</html>
