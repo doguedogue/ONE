@@ -1,7 +1,7 @@
 # EJERCICIOS DE ONE 🎒
 
 ### Lógica de Programación 💡
-- [Bola 8](./bola8.html)
+- [Bola 8](./bola8.html) 🎱
     - HTML5
     - Canvas
 
