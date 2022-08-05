@@ -1,4 +1,4 @@
-# EJERCICIOS DE ONE 🎒
+# Ejercicios de ONE 🎒
 
 ### Lógica de Programación 💡
 - [Bola 8](./bola8.html) 🎱
