@@ -1,4 +1,4 @@
-# Ejercicios de ONE 🎒
+# Ejercicios de ONE – Oracle Next Education 🎒
 
 ### Lógica de Programación 💡
 - [Bola 8](./bola8.html) 🎱
